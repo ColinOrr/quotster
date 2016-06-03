@@ -1,5 +1,7 @@
 version: '2'
 services:
+  db:
+    image: mongo
   web:
     build: .
     working_dir: /code
@@ -8,3 +10,5 @@ services:
       - .:/code
     ports:
       - 3000:3000
+    depends_on:
+      - db
