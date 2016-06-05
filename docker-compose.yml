@@ -8,7 +8,15 @@ services:
     command: nodemon -L
     volumes:
       - .:/code
-    ports:
-      - 3000:3000
     depends_on:
       - db
+    expose:
+      - 3000
+  lb:
+    image: dockercloud/haproxy
+    links:
+      - web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 80:80
