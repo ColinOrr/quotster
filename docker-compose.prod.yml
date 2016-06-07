@@ -1,0 +1,9 @@
+version: '2'
+services:
+  db:
+    restart: always
+  web:
+    command: npm start
+    restart: always
+  lb:
+    restart: always
