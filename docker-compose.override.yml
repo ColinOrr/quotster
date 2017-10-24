@@ -1,6 +1,6 @@
 version: '2'
 services:
-  web:
+  quotster_web:
     command: nodemon -L
     volumes:
       - .:/code

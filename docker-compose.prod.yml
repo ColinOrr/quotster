@@ -1,9 +1,9 @@
 version: '2'
 services:
-  db:
+  quotster_db:
     restart: always
-  web:
+  quotster_web:
     command: npm start
     restart: always
-  lb:
+  quotster_lb:
     restart: always

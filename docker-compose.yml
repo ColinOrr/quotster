@@ -1,19 +1,19 @@
 version: '2'
 services:
-  db:
+  quotster_db:
     image: mongo
-  web:
+  quotster_web:
     build: .
     working_dir: /code
     depends_on:
-      - db
+      - quotster_db
     expose:
       - 3000
-  lb:
+  quotster_lb:
     image: dockercloud/haproxy
     links:
-      - web
+      - quotster_web
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    ports:
-      - 9001:80
+    expose:
+      - 80

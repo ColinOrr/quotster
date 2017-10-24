@@ -38,6 +38,6 @@ app.use(route.delete('/', function *() {
 }));
 
 mongoose
-  .connect('mongodb://db/quotster')
+  .connect('mongodb://quotster_db/quotster')
   .then(() => console.log('database connection established'))
   .then(() => app.listen(3000, () => console.log('server listening on port 3000')));
